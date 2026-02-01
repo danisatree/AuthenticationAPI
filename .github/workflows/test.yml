@@ -43,6 +43,9 @@ jobs:
 
     - name: Run tests
       run: poetry run pytest
+      env:
+        JWT_SECRET_KEY: "test-secret-key-for-ci"
+        SECRET_KEY: "test-secret-key-for-ci"
 
     - name: Link check
       run: poetry run ruff check .
